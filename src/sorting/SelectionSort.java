@@ -24,7 +24,7 @@ public class SelectionSort {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the length of an array:- ");
+        System.out.print("(Algorithm - Selection_Short)->..\nEnter the length of an array:- ");
         int n = sc.nextInt();
         int[] ar = new int[n];
 
