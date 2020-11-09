@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Power {
 
     public static int power(int n , int p) {
-        return n>=0 && p>=0 ? p>0 ? n*power(n,p-1) : 1 : 0;
+        if (p==0) return 1;
+        return p%2==0 ? power(n*n,p/2) : n*power(n,p-1) ;
     }
     public static void main(String[] args) {
 
