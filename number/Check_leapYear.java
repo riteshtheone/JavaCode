@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Check_leapYear {
 
     public static boolean check_leapYear(int year){
-      return year%400==0 || year%100!=0 && year%4==0;
+        return year%400==0 || year%100!=0 && year%4==0;
     }
 
     public static void main(String[] args) {

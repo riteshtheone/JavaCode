@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Fibonacci_series {
 
-    public static int a=0,b=1,c;
-    public static boolean first=true;
+     static int a=0,b=1,c;
+     static boolean first=true;
     
     public static void fibonacci_series(int n){
         if (first){
