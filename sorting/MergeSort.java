@@ -51,32 +51,26 @@ public class MergeSort {
     }
 
     public static void mergeArray(int lowerIndex, int middle, int higherIndex) {
-
+        System.arraycopy(array, lowerIndex, tempArray, lowerIndex, higherIndex + 1 - lowerIndex);
         int i = lowerIndex;
         int j = middle + 1;
         int k = lowerIndex;
 
-        for (int a = lowerIndex; a <= higherIndex; a++) {
-            if (i <= middle && j <= higherIndex) {
-                if (array[i] <= array[j]) {
-                    tempArray[k] = array[i];
-                    i++;
-                } else {
-                    tempArray[k] = array[j];
-                    j++;
-                }
-                k++;
+        while (i <= middle && j <= higherIndex) {
+            if (tempArray[i] <= tempArray[j]) {
+                array[k] = tempArray[i];
+                i++;
             } else {
-                if (i <= middle) {
-                    tempArray[a] = array[i];
-                    i++;
-                } else {
-                    tempArray[a] = array[j];
-                    j++;
-                }
+                array[k] = tempArray[j];
+                j++;
             }
+            k++;
         }
-        System.arraycopy(tempArray, lowerIndex, array, lowerIndex, higherIndex + 1 - lowerIndex);
+        while (i <= middle) {
+            array[k] = tempArray[i];
+            i++;
+            k++;
+        }
     }
 
 }
