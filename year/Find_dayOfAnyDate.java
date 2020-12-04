@@ -29,8 +29,6 @@ public class Find_dayOfAnyDate {
         normalYear = tempYear - leapYear;
         oddDays += 2*leapYear + normalYear;
         switch (month-1){
-            case 9: oddDays += 0;
-                break;
             case 4: oddDays += 1;
                 break;
             case 7: oddDays += 2;
