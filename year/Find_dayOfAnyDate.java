@@ -29,21 +29,21 @@ public class Find_dayOfAnyDate {
         normalYear = tempYear - leapYear;
         oddDays += 2*leapYear + normalYear;
         switch (month-1){
-            case 4: oddDays += 1;
-                break;
-            case 7: oddDays += 2;
-                break;
             case 1:
             case 2:
             case 10: oddDays += 3;
                 break;
+            case 3:
+            case 6: oddDays += 6;
+                break;
+            case 4: oddDays += 1;
+                break;
             case 5: oddDays += 4;
+                break;
+            case 7: oddDays += 2;
                 break;
             case 8:
             case 11: oddDays += 5;
-                break;
-            case 3:
-            case 6: oddDays += 6;
                 break;
         }
         if (isLeapYear(year)) oddDays++;
