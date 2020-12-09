@@ -8,7 +8,37 @@ public class Find_dayOfAnyDate {
         return year%400==0 || year%4==0 && year%100!=0;
     }
 
+    public static boolean isDateValid(int day, int month, int year){
+        if (day < 1 || month<1 || month>12 || year < 1) return false;
+        switch (month){
+            case 2:
+                if (isLeapYear(year)){
+                    if (day>29) return false;
+                }else{
+                    if (day>28) return false;
+                }
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                if (day>31) return false;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if (day>30) return false;
+                break;
+        }
+        return true;
+    }
+
     public static String findTheDay(int day, int month, int year){
+        if (!isDateValid(day, month, year)) return "Invalid Date!!!";
         int leapYear, normalYear;
         int oddDays = 0;
         int tempYear = year-1;
@@ -46,7 +76,7 @@ public class Find_dayOfAnyDate {
             case 11: oddDays += 5;
                 break;
         }
-        if (isLeapYear(year)) oddDays++;
+        if (isLeapYear(year) && month>2) oddDays++;
         oddDays = (oddDays + day) % 7;
         switch (oddDays){
             case 0: return "Sunday";
